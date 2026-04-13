@@ -1,0 +1,6 @@
+
+how to create a environment ...
+
+1. python3 -m venv ml_env
+2. source ml_env/bin/activate 
+

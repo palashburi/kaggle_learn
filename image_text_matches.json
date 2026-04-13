@@ -1,0 +1,862 @@
+{
+  "metadata": {
+    "generated_at": "2025-09-10T22:11:54.528791",
+    "total_images": 4,
+    "sigma_values_used": [
+      "sigma_15",
+      "sigma_30",
+      "sigma_45",
+      "sigma_60"
+    ]
+  },
+  "results": {
+    "sigma_15": {
+      "image_1757185203528.jpg": {
+        "image_timestamp": 23.0,
+        "image_description": "A kitchen sink filled with unwashed dishes, including a pan, a cutting board, and a pressure cooker lid.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.19096128642559052,
+            "text_timestamp": 21.0,
+            "time_gap_seconds": 2.0,
+            "text_content": "This needs to be watched with utmost urgency.",
+            "word_count": 8
+          },
+          {
+            "rank": 2,
+            "score": 0.1773233413696289,
+            "text_timestamp": 14.0,
+            "time_gap_seconds": 9.0,
+            "text_content": "They have not been watched and they have been attracting bugs like anything.",
+            "word_count": 13
+          },
+          {
+            "rank": 3,
+            "score": 0.1546502411365509,
+            "text_timestamp": 9.0,
+            "time_gap_seconds": 14.0,
+            "text_content": "So the biggest problem in our house is utensils.",
+            "word_count": 9
+          }
+        ]
+      },
+      "image_1757185218368.jpg": {
+        "image_timestamp": 38.0,
+        "image_description": "→  A single-burner Prestige gas stove on a kitchen countertop.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.2026657611131668,
+            "text_timestamp": 45.0,
+            "time_gap_seconds": 7.0,
+            "text_content": "We have a lot of cardboards lying around. These needs to be thrown out.",
+            "word_count": 14
+          },
+          {
+            "rank": 2,
+            "score": 0.1120598167181015,
+            "text_timestamp": 21.0,
+            "time_gap_seconds": 17.0,
+            "text_content": "This needs to be watched with utmost urgency.",
+            "word_count": 8
+          },
+          {
+            "rank": 3,
+            "score": 0.07391050457954407,
+            "text_timestamp": 60.0,
+            "time_gap_seconds": 22.0,
+            "text_content": "It didn't come out that well, let's go outside and see.",
+            "word_count": 11
+          }
+        ]
+      },
+      "image_1757185235289.jpg": {
+        "image_timestamp": 55.0,
+        "image_description": "→ Cardboard boxes and other packaging materials piled on the floor in the corner of a room.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.21454232931137085,
+            "text_timestamp": 60.0,
+            "time_gap_seconds": 5.0,
+            "text_content": "It didn't come out that well, let's go outside and see.",
+            "word_count": 11
+          },
+          {
+            "rank": 2,
+            "score": 0.19996562600135803,
+            "text_timestamp": 45.0,
+            "time_gap_seconds": 10.0,
+            "text_content": "We have a lot of cardboards lying around. These needs to be thrown out.",
+            "word_count": 14
+          },
+          {
+            "rank": 3,
+            "score": 0.14919248223304749,
+            "text_timestamp": 67.0,
+            "time_gap_seconds": 12.0,
+            "text_content": "It's raining quite a bit in Bangalore these days.",
+            "word_count": 9
+          }
+        ]
+      },
+      "image_1757185287645.jpg": {
+        "image_timestamp": 107.0,
+        "image_description": "→ A large towel hanging on an indoor clothesline to dry, with a staircase visible in the background.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.25276243686676025,
+            "text_timestamp": 106.0,
+            "time_gap_seconds": 1.0,
+            "text_content": "It will be alright, I will take out the towel.",
+            "word_count": 10
+          },
+          {
+            "rank": 2,
+            "score": 0.2150620073080063,
+            "text_timestamp": 100.0,
+            "time_gap_seconds": 7.0,
+            "text_content": "So tell him, man, please tell Ravi, Ravi, to take this towel out, mpan.",
+            "word_count": 14
+          },
+          {
+            "rank": 3,
+            "score": 0.20100565254688263,
+            "text_timestamp": 110.0,
+            "time_gap_seconds": 3.0,
+            "text_content": "Bangalore is also fine, the weather is good.",
+            "word_count": 8
+          }
+        ]
+      },
+      "image_1757185504802.jpg": {
+        "image_timestamp": 324.0,
+        "image_description": "→  A headshot of a young man with dark curly hair and glasses, looking at the camera.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.081392802298069,
+            "text_timestamp": 344.0,
+            "time_gap_seconds": 20.0,
+            "text_content": "I have seen the best weather in Barcelona. What a place Barcelona is, man.",
+            "word_count": 14
+          },
+          {
+            "rank": 2,
+            "score": 0.04822332412004471,
+            "text_timestamp": 349.0,
+            "time_gap_seconds": 25.0,
+            "text_content": "If it had been there, the take-up would definitely have been in the company itself.",
+            "word_count": 15
+          },
+          {
+            "rank": 3,
+            "score": 0.007342349737882614,
+            "text_timestamp": 364.0,
+            "time_gap_seconds": 40.0,
+            "text_content": "It's fun. What am I doing by becoming an Indian?",
+            "word_count": 10
+          }
+        ]
+      },
+      "image_1757185517297.jpg": {
+        "image_timestamp": 337.0,
+        "image_description": "→  A pair of glasses resting on top of a red and grey washing machine.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.16213563084602356,
+            "text_timestamp": 349.0,
+            "time_gap_seconds": 12.0,
+            "text_content": "If it had been there, the take-up would definitely have been in the company itself.",
+            "word_count": 15
+          },
+          {
+            "rank": 2,
+            "score": 0.14356081187725067,
+            "text_timestamp": 344.0,
+            "time_gap_seconds": 7.0,
+            "text_content": "I have seen the best weather in Barcelona. What a place Barcelona is, man.",
+            "word_count": 14
+          },
+          {
+            "rank": 3,
+            "score": 0.04331633076071739,
+            "text_timestamp": 364.0,
+            "time_gap_seconds": 27.0,
+            "text_content": "It's fun. What am I doing by becoming an Indian?",
+            "word_count": 10
+          }
+        ]
+      },
+      "image_1757185650446.jpg": {
+        "image_timestamp": 470.0,
+        "image_description": "→  A screenshot of a meeting management application's dashboard, displaying features like a calendar, recent meetings, and project folders.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.1853598654270172,
+            "text_timestamp": 473.0,
+            "time_gap_seconds": 3.0,
+            "text_content": "So, for now, I'll stop it. It seems right.",
+            "word_count": 9
+          },
+          {
+            "rank": 2,
+            "score": 0.08520212024450302,
+            "text_timestamp": 447.0,
+            "time_gap_seconds": 23.0,
+            "text_content": "Now, like, I'll show you the design page. What my team has created now.",
+            "word_count": 14
+          },
+          {
+            "rank": 3,
+            "score": 0.021355941891670227,
+            "text_timestamp": 439.0,
+            "time_gap_seconds": 31.0,
+            "text_content": "What the hell am I even saying, just saying, just saying. How much more will I say?",
+            "word_count": 17
+          }
+        ]
+      }
+    },
+    "sigma_30": {
+      "image_1757185203528.jpg": {
+        "image_timestamp": 23.0,
+        "image_description": "A kitchen sink filled with unwashed dishes, including a pan, a cutting board, and a pressure cooker lid.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.21439771354198456,
+            "text_timestamp": 9.0,
+            "time_gap_seconds": 14.0,
+            "text_content": "So the biggest problem in our house is utensils.",
+            "word_count": 9
+          },
+          {
+            "rank": 2,
+            "score": 0.20295308530330658,
+            "text_timestamp": 14.0,
+            "time_gap_seconds": 9.0,
+            "text_content": "They have not been watched and they have been attracting bugs like anything.",
+            "word_count": 13
+          },
+          {
+            "rank": 3,
+            "score": 0.19223862886428833,
+            "text_timestamp": 21.0,
+            "time_gap_seconds": 2.0,
+            "text_content": "This needs to be watched with utmost urgency.",
+            "word_count": 8
+          }
+        ]
+      },
+      "image_1757185218368.jpg": {
+        "image_timestamp": 38.0,
+        "image_description": "→  A single-burner Prestige gas stove on a kitchen countertop.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.2199113965034485,
+            "text_timestamp": 45.0,
+            "time_gap_seconds": 7.0,
+            "text_content": "We have a lot of cardboards lying around. These needs to be thrown out.",
+            "word_count": 14
+          },
+          {
+            "rank": 2,
+            "score": 0.18139907717704773,
+            "text_timestamp": 21.0,
+            "time_gap_seconds": 17.0,
+            "text_content": "This needs to be watched with utmost urgency.",
+            "word_count": 8
+          },
+          {
+            "rank": 3,
+            "score": 0.16559112071990967,
+            "text_timestamp": 60.0,
+            "time_gap_seconds": 22.0,
+            "text_content": "It didn't come out that well, let's go outside and see.",
+            "word_count": 11
+          }
+        ]
+      },
+      "image_1757185235289.jpg": {
+        "image_timestamp": 55.0,
+        "image_description": "→ Cardboard boxes and other packaging materials piled on the floor in the corner of a room.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.2362314760684967,
+            "text_timestamp": 45.0,
+            "time_gap_seconds": 10.0,
+            "text_content": "We have a lot of cardboards lying around. These needs to be thrown out.",
+            "word_count": 14
+          },
+          {
+            "rank": 2,
+            "score": 0.22367045283317566,
+            "text_timestamp": 60.0,
+            "time_gap_seconds": 5.0,
+            "text_content": "It didn't come out that well, let's go outside and see.",
+            "word_count": 11
+          },
+          {
+            "rank": 3,
+            "score": 0.1927998661994934,
+            "text_timestamp": 71.0,
+            "time_gap_seconds": 16.0,
+            "text_content": "Today I also went to my friend Shaurya's house.",
+            "word_count": 9
+          }
+        ]
+      },
+      "image_1757185287645.jpg": {
+        "image_timestamp": 107.0,
+        "image_description": "→ A large towel hanging on an indoor clothesline to dry, with a staircase visible in the background.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.253184050321579,
+            "text_timestamp": 106.0,
+            "time_gap_seconds": 1.0,
+            "text_content": "It will be alright, I will take out the towel.",
+            "word_count": 10
+          },
+          {
+            "rank": 2,
+            "score": 0.23336249589920044,
+            "text_timestamp": 100.0,
+            "time_gap_seconds": 7.0,
+            "text_content": "So tell him, man, please tell Ravi, Ravi, to take this towel out, man.",
+            "word_count": 14
+          },
+          {
+            "rank": 3,
+            "score": 0.23315393924713135,
+            "text_timestamp": 95.0,
+            "time_gap_seconds": 12.0,
+            "text_content": "Now, like, this is Ravi Maharaj Chowk. They forget to take the towel off from here.",
+            "word_count": 16
+          }
+        ]
+      },
+      "image_1757185504802.jpg": {
+        "image_timestamp": 324.0,
+        "image_description": "→  A headshot of a young man with dark curly hair and glasses, looking at the camera.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.1585315316915512,
+            "text_timestamp": 344.0,
+            "time_gap_seconds": 20.0,
+            "text_content": "I have seen the best weather in Barcelona. What a place Barcelona is, man.",
+            "word_count": 14
+          },
+          {
+            "rank": 2,
+            "score": 0.1366618275642395,
+            "text_timestamp": 349.0,
+            "time_gap_seconds": 25.0,
+            "text_content": "If it had been there, the take-up would definitely have been in the company itself.",
+            "word_count": 15
+          },
+          {
+            "rank": 3,
+            "score": 0.10567048192024231,
+            "text_timestamp": 364.0,
+            "time_gap_seconds": 40.0,
+            "text_content": "It's fun. What am I doing by becoming an Indian?",
+            "word_count": 10
+          }
+        ]
+      },
+      "image_1757185517297.jpg": {
+        "image_timestamp": 337.0,
+        "image_description": "→  A pair of glasses resting on top of a red and grey washing machine.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.2061147689819336,
+            "text_timestamp": 349.0,
+            "time_gap_seconds": 12.0,
+            "text_content": "If it had been there, the take-up would definitely have been in the company itself.",
+            "word_count": 15
+          },
+          {
+            "rank": 2,
+            "score": 0.1557769626379013,
+            "text_timestamp": 344.0,
+            "time_gap_seconds": 7.0,
+            "text_content": "I have seen the best weather in Barcelona. What a place Barcelona is, man.",
+            "word_count": 14
+          },
+          {
+            "rank": 3,
+            "score": 0.14598877727985382,
+            "text_timestamp": 364.0,
+            "time_gap_seconds": 27.0,
+            "text_content": "It's fun. What am I doing by becoming an Indian?",
+            "word_count": 10
+          }
+        ]
+      },
+      "image_1757185650446.jpg": {
+        "image_timestamp": 470.0,
+        "image_description": "→  A screenshot of a meeting management application's dashboard, displaying features like a calendar, recent meetings, and project folders.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.20575641095638275,
+            "text_timestamp": 447.0,
+            "time_gap_seconds": 23.0,
+            "text_content": "Now, like, I'll show you the design page. What my team has created now.",
+            "word_count": 14
+          },
+          {
+            "rank": 2,
+            "score": 0.1881612092256546,
+            "text_timestamp": 473.0,
+            "time_gap_seconds": 3.0,
+            "text_content": "So, for now, I'll stop it. It seems right.",
+            "word_count": 9
+          },
+          {
+            "rank": 3,
+            "score": 0.10595311224460602,
+            "text_timestamp": 439.0,
+            "time_gap_seconds": 31.0,
+            "text_content": "What the hell am I even saying, just saying, just saying. How much more will I say?",
+            "word_count": 17
+          }
+        ]
+      }
+    },
+    "sigma_45": {
+      "image_1757185203528.jpg": {
+        "image_timestamp": 23.0,
+        "image_description": "A kitchen sink filled with unwashed dishes, including a pan, a cutting board, and a pressure cooker lid.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.22776776552200317,
+            "text_timestamp": 9.0,
+            "time_gap_seconds": 14.0,
+            "text_content": "So the biggest problem in our house is utensils.",
+            "word_count": 9
+          },
+          {
+            "rank": 2,
+            "score": 0.21362902224063873,
+            "text_timestamp": 45.0,
+            "time_gap_seconds": 22.0,
+            "text_content": "We have a lot of cardboards lying around. These needs to be thrown out.",
+            "word_count": 14
+          },
+          {
+            "rank": 3,
+            "score": 0.2080908715724945,
+            "text_timestamp": 14.0,
+            "time_gap_seconds": 9.0,
+            "text_content": "They have not been watched and they have been attracting bugs like anything.",
+            "word_count": 13
+          }
+        ]
+      },
+      "image_1757185218368.jpg": {
+        "image_timestamp": 38.0,
+        "image_description": "→  A single-burner Prestige gas stove on a kitchen countertop.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.2232624888420105,
+            "text_timestamp": 45.0,
+            "time_gap_seconds": 7.0,
+            "text_content": "We have a lot of cardboards lying around. These needs to be thrown out.",
+            "word_count": 14
+          },
+          {
+            "rank": 2,
+            "score": 0.19832299649715424,
+            "text_timestamp": 21.0,
+            "time_gap_seconds": 17.0,
+            "text_content": "This needs to be watched with utmost urgency.",
+            "word_count": 8
+          },
+          {
+            "rank": 3,
+            "score": 0.19227071106433868,
+            "text_timestamp": 60.0,
+            "time_gap_seconds": 22.0,
+            "text_content": "It didn't come out that well, let's go outside and see.",
+            "word_count": 11
+          }
+        ]
+      },
+      "image_1757185235289.jpg": {
+        "image_timestamp": 55.0,
+        "image_description": "→ Cardboard boxes and other packaging materials piled on the floor in the corner of a room.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.24363625049591064,
+            "text_timestamp": 45.0,
+            "time_gap_seconds": 10.0,
+            "text_content": "We have a lot of cardboards lying around. These needs to be thrown out.",
+            "word_count": 14
+          },
+          {
+            "rank": 2,
+            "score": 0.22540298104286194,
+            "text_timestamp": 60.0,
+            "time_gap_seconds": 5.0,
+            "text_content": "It didn't come out that well, let's go outside and see.",
+            "word_count": 11
+          },
+          {
+            "rank": 3,
+            "score": 0.20865142345428467,
+            "text_timestamp": 71.0,
+            "time_gap_seconds": 16.0,
+            "text_content": "Today I also went to my friend Shaurya's house.",
+            "word_count": 9
+          }
+        ]
+      },
+      "image_1757185287645.jpg": {
+        "image_timestamp": 107.0,
+        "image_description": "→ A large towel hanging on an indoor clothesline to dry, with a staircase visible in the background.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.2532621920108795,
+            "text_timestamp": 106.0,
+            "time_gap_seconds": 1.0,
+            "text_content": "It will be alright, I will take out the towel.",
+            "word_count": 10
+          },
+          {
+            "rank": 2,
+            "score": 0.24375006556510925,
+            "text_timestamp": 95.0,
+            "time_gap_seconds": 12.0,
+            "text_content": "Now, like, this is Ravi Maharaj Chowk. They forget to take the towel off from here.",
+            "word_count": 16
+          },
+          {
+            "rank": 3,
+            "score": 0.23691856861114502,
+            "text_timestamp": 100.0,
+            "time_gap_seconds": 7.0,
+            "text_content": "So tell him, man, please tell Ravi, Ravi, to take this towel out, man.",
+            "word_count": 14
+          }
+        ]
+      },
+      "image_1757185504802.jpg": {
+        "image_timestamp": 324.0,
+        "image_description": "→  A headshot of a young man with dark curly hair and glasses, looking at the camera.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.17936275899410248,
+            "text_timestamp": 344.0,
+            "time_gap_seconds": 20.0,
+            "text_content": "I have seen the best weather in Barcelona. What a place Barcelona is, man.",
+            "word_count": 14
+          },
+          {
+            "rank": 2,
+            "score": 0.17314904928207397,
+            "text_timestamp": 364.0,
+            "time_gap_seconds": 40.0,
+            "text_content": "It's fun. What am I doing by becoming an Indian?",
+            "word_count": 10
+          },
+          {
+            "rank": 3,
+            "score": 0.16573840379714966,
+            "text_timestamp": 349.0,
+            "time_gap_seconds": 25.0,
+            "text_content": "If it had been there, the take-up would definitely have been in the company itself.",
+            "word_count": 15
+          }
+        ]
+      },
+      "image_1757185517297.jpg": {
+        "image_timestamp": 337.0,
+        "image_description": "→  A pair of glasses resting on top of a red and grey washing machine.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.21548205614089966,
+            "text_timestamp": 349.0,
+            "time_gap_seconds": 12.0,
+            "text_content": "If it had been there, the take-up would definitely have been in the company itself.",
+            "word_count": 15
+          },
+          {
+            "rank": 2,
+            "score": 0.18282505869865417,
+            "text_timestamp": 364.0,
+            "time_gap_seconds": 27.0,
+            "text_content": "It's fun. What am I doing by becoming an Indian?",
+            "word_count": 10
+          },
+          {
+            "rank": 3,
+            "score": 0.15815076231956482,
+            "text_timestamp": 344.0,
+            "time_gap_seconds": 7.0,
+            "text_content": "I have seen the best weather in Barcelona. What a place Barcelona is, man.",
+            "word_count": 14
+          }
+        ]
+      },
+      "image_1757185650446.jpg": {
+        "image_timestamp": 470.0,
+        "image_description": "→  A screenshot of a meeting management application's dashboard, displaying features like a calendar, recent meetings, and project folders.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.24224863946437836,
+            "text_timestamp": 447.0,
+            "time_gap_seconds": 23.0,
+            "text_content": "Now, like, I'll show you the design page. What my team has created now.",
+            "word_count": 14
+          },
+          {
+            "rank": 2,
+            "score": 0.1886846125125885,
+            "text_timestamp": 473.0,
+            "time_gap_seconds": 3.0,
+            "text_content": "So, for now, I'll stop it. It seems right.",
+            "word_count": 9
+          },
+          {
+            "rank": 3,
+            "score": 0.14253699779510498,
+            "text_timestamp": 439.0,
+            "time_gap_seconds": 31.0,
+            "text_content": "What the hell am I even saying, just saying, just saying. How much more will I say?",
+            "word_count": 17
+          }
+        ]
+      }
+    },
+    "sigma_60": {
+      "image_1757185203528.jpg": {
+        "image_timestamp": 23.0,
+        "image_description": "A kitchen sink filled with unwashed dishes, including a pan, a cutting board, and a pressure cooker lid.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.23264166712760925,
+            "text_timestamp": 9.0,
+            "time_gap_seconds": 14.0,
+            "text_content": "So the biggest problem in our house is utensils.",
+            "word_count": 9
+          },
+          {
+            "rank": 2,
+            "score": 0.22509554028511047,
+            "text_timestamp": 45.0,
+            "time_gap_seconds": 22.0,
+            "text_content": "We have a lot of cardboards lying around. These needs to be thrown out.",
+            "word_count": 14
+          },
+          {
+            "rank": 3,
+            "score": 0.20991964638233185,
+            "text_timestamp": 14.0,
+            "time_gap_seconds": 9.0,
+            "text_content": "They have not been watched and they have been attracting bugs like anything.",
+            "word_count": 13
+          }
+        ]
+      },
+      "image_1757185218368.jpg": {
+        "image_timestamp": 38.0,
+        "image_description": "→  A single-burner Prestige gas stove on a kitchen countertop.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.22444739937782288,
+            "text_timestamp": 45.0,
+            "time_gap_seconds": 7.0,
+            "text_content": "We have a lot of cardboards lying around. These needs to be thrown out.",
+            "word_count": 14
+          },
+          {
+            "rank": 2,
+            "score": 0.2046121209859848,
+            "text_timestamp": 21.0,
+            "time_gap_seconds": 17.0,
+            "text_content": "This needs to be watched with utmost urgency.",
+            "word_count": 8
+          },
+          {
+            "rank": 3,
+            "score": 0.20259082317352295,
+            "text_timestamp": 60.0,
+            "time_gap_seconds": 22.0,
+            "text_content": "It didn't come out that well, let's go outside and see.",
+            "word_count": 11
+          }
+        ]
+      },
+      "image_1757185235289.jpg": {
+        "image_timestamp": 55.0,
+        "image_description": "→ Cardboard boxes and other packaging materials piled on the floor in the corner of a room.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.2462823987007141,
+            "text_timestamp": 45.0,
+            "time_gap_seconds": 10.0,
+            "text_content": "We have a lot of cardboards lying around. These needs to be thrown out.",
+            "word_count": 14
+          },
+          {
+            "rank": 2,
+            "score": 0.22601252794265747,
+            "text_timestamp": 60.0,
+            "time_gap_seconds": 5.0,
+            "text_content": "It didn't come out that well, let's go outside and see.",
+            "word_count": 11
+          },
+          {
+            "rank": 3,
+            "score": 0.21450205147266388,
+            "text_timestamp": 71.0,
+            "time_gap_seconds": 16.0,
+            "text_content": "Today I also went to my friend Shaurya's house.",
+            "word_count": 9
+          }
+        ]
+      },
+      "image_1757185287645.jpg": {
+        "image_timestamp": 107.0,
+        "image_description": "→ A large towel hanging on an indoor clothesline to dry, with a staircase visible in the background.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.2532895803451538,
+            "text_timestamp": 106.0,
+            "time_gap_seconds": 1.0,
+            "text_content": "It will be alright, I will take out the towel.",
+            "word_count": 10
+          },
+          {
+            "rank": 2,
+            "score": 0.24757137894630432,
+            "text_timestamp": 95.0,
+            "time_gap_seconds": 12.0,
+            "text_content": "Now, like, this is Ravi Maharaj Chowk. They forget to take the towel off from here.",
+            "word_count": 16
+          },
+          {
+            "rank": 3,
+            "score": 0.23817595839500427,
+            "text_timestamp": 100.0,
+            "time_gap_seconds": 7.0,
+            "text_content": "So tell him, man, please tell Ravi, Ravi, to take this towel out, man.",
+            "word_count": 14
+          }
+        ]
+      },
+      "image_1757185504802.jpg": {
+        "image_timestamp": 324.0,
+        "image_description": "→  A headshot of a young man with dark curly hair and glasses, looking at the camera.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.20581799745559692,
+            "text_timestamp": 364.0,
+            "time_gap_seconds": 40.0,
+            "text_content": "It's fun. What am I doing by becoming an Indian?",
+            "word_count": 10
+          },
+          {
+            "rank": 2,
+            "score": 0.18728287518024445,
+            "text_timestamp": 344.0,
+            "time_gap_seconds": 20.0,
+            "text_content": "I have seen the best weather in Barcelona. What a place Barcelona is, man.",
+            "word_count": 14
+          },
+          {
+            "rank": 3,
+            "score": 0.17731469869613647,
+            "text_timestamp": 349.0,
+            "time_gap_seconds": 25.0,
+            "text_content": "If it had been there, the take-up would definitely have been in the company itself.",
+            "word_count": 15
+          }
+        ]
+      },
+      "image_1757185517297.jpg": {
+        "image_timestamp": 337.0,
+        "image_description": "→  A pair of glasses resting on top of a red and grey washing machine.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.2188602089881897,
+            "text_timestamp": 349.0,
+            "time_gap_seconds": 12.0,
+            "text_content": "If it had been there, the take-up would definitely have been in the company itself.",
+            "word_count": 15
+          },
+          {
+            "rank": 2,
+            "score": 0.19780461490154266,
+            "text_timestamp": 364.0,
+            "time_gap_seconds": 27.0,
+            "text_content": "It's fun. What am I doing by becoming an Indian?",
+            "word_count": 10
+          },
+          {
+            "rank": 3,
+            "score": 0.16911984980106354,
+            "text_timestamp": 373.0,
+            "time_gap_seconds": 36.0,
+            "text_content": "Now Palash will look at this and say that the guy keeps crying and wailing. But it's okay, let it be seen. This is this is testing data. I think it's important that",
+            "word_count": 33
+          }
+        ]
+      },
+      "image_1757185650446.jpg": {
+        "image_timestamp": 470.0,
+        "image_description": "→  A screenshot of a meeting management application's dashboard, displaying features like a calendar, recent meetings, and project folders.",
+        "top_matches": [
+          {
+            "rank": 1,
+            "score": 0.2564951479434967,
+            "text_timestamp": 447.0,
+            "time_gap_seconds": 23.0,
+            "text_content": "Now, like, I'll show you the design page. What my team has created now.",
+            "word_count": 14
+          },
+          {
+            "rank": 2,
+            "score": 0.18886815011501312,
+            "text_timestamp": 473.0,
+            "time_gap_seconds": 3.0,
+            "text_content": "So, for now, I'll stop it. It seems right.",
+            "word_count": 9
+          },
+          {
+            "rank": 3,
+            "score": 0.15812934935092926,
+            "text_timestamp": 439.0,
+            "time_gap_seconds": 31.0,
+            "text_content": "What the hell am I even saying, just saying, just saying. How much more will I say?",
+            "word_count": 17
+          }
+        ]
+      }
+    }
+  }
+}
