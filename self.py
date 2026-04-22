@@ -190,6 +190,33 @@ class GPT(nn.Module):
         if targets is not None:
             loss = F.cross_entropy(logits.view(-1, 50257), targets.view(-1))
         return logits, loss
+    
+    def configure_optimizers(self,weight_decay, learnr , device):
+        param_dict = {np:p for np,p in self.named_parameters()}
+        param_dict = {np:p for np,p in param_dict.items() if p.requires_grad}
+
+        decay_params = [p for np,p in param_dict.items() if p.dim() >= 2]
+        nondecay_params = [p for np,p in param_dict.items() if p.dim() < 2 ]
+
+        optim_groups = [
+            {'params' : decay_params, 'weight_decay' :weight_decay},
+            {'params' : nondecay_params, 'weight_decay' : 0}
+        ]
+
+        num_decay_params = sum(p.numel() for p in decay_params)
+        num_nondecay_params = sum(p.numel() for p in nondecay_params)
+      
+        print(f"num decayed parameter tensors: {len(decay_params)}, with {num_decay_params:,} parameters")
+        print(f"num non-decayed parameter tensors: {len(nondecay_params)}, with { num_nondecay_params:,} parameters")
+        # Create AdamW optimizer and use the fused version if it is available
+        fused_available = 'fused' in inspect.signature(torch.optim.AdamW).parameters
+        use_fused = fused_available and 'cuda' in device
+        
+        print(f"using fused AdamW: {use_fused}")
+        optimizer = torch.optim.AdamW(optim_groups, lr=learnr, betas=(0.9, 0.95), eps=1e-8, fused=use_fused)
+        return optimizer
+ 
+
         
 # this forwards pass explained 
 
@@ -350,7 +377,7 @@ max_length = 30
 
  
 
-enc = tiktoken.get_encoding('gpt2')
+# enc = tiktoken.get_encoding('gpt2')
 # tokens = enc.encode("Hi, I am a langage model")
 # tokens = torch.tensor(tokens, dtype = torch.long)
 # tokens = tokens.unsqueeze(0).repeat(num_return_sequences,1)
@@ -376,36 +403,355 @@ enc = tiktoken.get_encoding('gpt2')
 #     decoded = enc.decode(tokens)
 #     print(">",decoded)
 
+# torch.manual_seed(1337)
+# torch.mps.manual_seed(1337)
+
+# total_batch_size = 4096
+# B=4
+# T=256
+# assert total_batch_size %(B*T) == 0
+# grad_accum_steps = total_batch_size//(B*T)
+# print(f"total desired batch size: {total_batch_size}")
+# print(f"grad_accum_steps : {grad_accum_steps}")
+
+# train_loader = DataLoaderLite(B=B,T=T)
+
+# torch.set_float32_matmul_precision('high')
+
+# model = GPT(GPTConfig())
+# model.to('mps')
+# # model = torch.compile(model)
+
+# max_lr = 3e-4
+# min_lr = max_lr*0.1
+# warmup_steps = 10
+# max_steps= 820
+
+# def get_lr(it):
+#     if it < warmup_steps:
+#         return max_lr * (it+1) / warmup_steps
+    
+#     if it > max_steps:
+#         return min_lr
+    
+#     decay_ratio = (it - warmup_steps) / (max_steps - warmup_steps)
+#     assert 0 <= decay_ratio <= 1
+#     coeff = 0.5 * (1.0 + math.cos(math.pi * decay_ratio))
+#     return min_lr + coeff*(max_lr-min_lr)
+
+
+
+# optimizer = model.configure_optimizers(weight_decay = 0.1 , learnr=  3e-4 , device = 'mps')
+
+# for step in range(max_steps):
+#     t0 = time.time()
+#     optimizer.zero_grad()
+#     for micro_step in range(grad_accum_steps):
+#         x,y = train_loader.next_batch()
+#         x,y = x.to('mps'),y.to('mps')
+#         with torch.autocast(device_type="mps", dtype=torch.bfloat16):
+#             logits,loss = model(x,y)
+#         loss = loss/grad_accum_steps
+#         # loss_accum += loss.detach()
+#         loss.backward()
+#     norm = torch.nn.utils.clip_grad_norm_(model.parameters(),1.0)
+
+#     lr = get_lr(step)
+#     for param_group in optimizer.param_groups:
+#         param_group['lr'] = lr
+#     optimizer.step()
+#     torch.mps.synchronize()
+#     t1 = time.time()
+#     dt = (t1-t0)*1000
+#     token_persec = (train_loader.B * train_loader.T*grad_accum_steps)/(t1-t0)
+#     print(f"step {step:4d} , loss : {loss.item():.6f} ,norm : {norm :.4f}, dt {dt*1000: 2f} time , tokens per sec {token_persec} ")
+
+
+# # after your training loop, before sys.exit()
+# torch.save(model.state_dict(), 'shakespeare_gpt10_.pt')
+# print("model saved to shakespeare_gpt10_.pt")
+
+# load saved weights
+# model = GPT(GPTConfig())
+# model.load_state_dict(torch.load('shakespeare_gpt10_.pt', map_location='mps'))
+# model.to('mps')
+# model.eval()
+# print("model loaded")
+
+# # then run generation
+# enc = tiktoken.get_encoding('gpt2')
+# tokens = enc.encode("ROMEO: What light through yonder")
+# tokens = torch.tensor(tokens, dtype=torch.long)
+# tokens = tokens.unsqueeze(0).repeat(5, 1)
+# x = tokens.to('mps')
+
+# torch.manual_seed(42)
+# torch.mps.manual_seed(42)
+
+# while x.size(1) < 100:
+#     with torch.no_grad():
+#         with torch.autocast(device_type="mps", dtype=torch.bfloat16):
+#             logits, loss = model(x)
+#         logits = logits[:, -1, :]
+#         probs = F.softmax(logits, dim=-1)
+#         topk_probs, topk_indices = torch.topk(probs, 50, dim=-1)
+#         ix = torch.multinomial(topk_probs, 1)
+#         xcol = torch.gather(topk_indices, -1, ix)
+#         x = torch.cat((x, xcol), dim=1)
+
+# for i in range(5):
+#     tokens = x[i, :100].tolist()
+#     decoded = enc.decode(tokens)
+#     print(f"\n> {decoded}")
+#     print("-" * 40)
+
+import os
+import math
+import time
+import torch
+import torch.nn as nn
+from torch.nn import functional as F
+from dataclasses import dataclass
+import tiktoken
+from datasets import load_dataset
+import random
+import itertools
+# ── paste your GPT classes here (CausalAttention, MLP, Block, GPTConfig, GPT) ──
+
+enc = tiktoken.get_encoding('gpt2')
+
+# ─────────────────────────────────────────
+# DATASET SETUP
+# ─────────────────────────────────────────
+
+
+print("loading datasets...")
+ds_finemath  = load_dataset("HuggingFaceTB/finemath", "finemath-4plus", streaming=True, split="train")
+ds_textbooks = load_dataset("open-phi/textbooks",      streaming=True,   split="train")
+ds_stories   = load_dataset("roneneldan/TinyStories",  streaming=True,   split="train")
+print("done\n")
+
+stories_iter   = itertools.cycle(ds_stories)
+math_iter      = itertools.cycle(ds_finemath)
+textbooks_iter = itertools.cycle(ds_textbooks)
+
+def get_next_text():
+    global stories_iter, math_iter, textbooks_iter
+    """
+    mix ratio:
+      50% textbooks  ← reasoning structure
+      30% stories    ← language fluency
+      20% math       ← math patterns
+    """
+    r = random.random()
+    if r < 0.50:
+            ex = next(textbooks_iter)
+            return ex.get('textbook', '') or ex.get('text', '')
+    elif r < 0.75:
+            ex = next(stories_iter)
+            return ex.get('text', '')
+    else:
+            ex = next(math_iter)
+            # format math as question + reasoning + answer
+            q = ex.get('question', '')
+            a = ex.get('answer', '')
+            return f"Question: {q}\nAnswer: {a}"
+    
+
+
+# ─────────────────────────────────────────
+# STREAMING DATA LOADER
+# ─────────────────────────────────────────
+
+class StreamingDataLoader:
+    def __init__(self, B, T):
+        self.B = B
+        self.T = T
+        self.token_buffer = []
+        self.total_tokens_seen = 0
+
+    def _fill_buffer(self, needed):
+        while len(self.token_buffer) < needed:
+            text = get_next_text()
+            if text and len(text.strip()) > 0:
+                tokens = enc.encode(text)
+                self.token_buffer.extend(tokens)
+
+    def next_batch(self):
+        needed = self.B * self.T + 1
+        self._fill_buffer(needed)
+
+        buf = torch.tensor(
+            self.token_buffer[:needed],
+            dtype=torch.long
+        )
+        self.token_buffer = self.token_buffer[self.B * self.T:]  # advance
+
+        x = buf[:-1].view(self.B, self.T)
+        y = buf[1:].view(self.B, self.T)
+        self.total_tokens_seen += self.B * self.T
+        return x, y
+
+
+# ─────────────────────────────────────────
+# CHECKPOINTING
+# ─────────────────────────────────────────
+
+CHECKPOINT_DIR = 'checkpoints'
+os.makedirs(CHECKPOINT_DIR, exist_ok=True)
+
+def save_checkpoint(model, optimizer, step, loss, is_best=False):
+    checkpoint = {
+        'step':                step,
+        'model_state_dict':    model.state_dict(),
+        'optimizer_state_dict': optimizer.state_dict(),
+        'loss':                loss,
+        'total_tokens_seen':   train_loader.total_tokens_seen,
+    }
+    # always save latest
+    path = os.path.join(CHECKPOINT_DIR, 'latest.pt')
+    torch.save(checkpoint, path)
+
+    # save every 500 steps permanently
+    if step % 500 == 0:
+        path = os.path.join(CHECKPOINT_DIR, f'step_{step:05d}.pt')
+        torch.save(checkpoint, path)
+        print(f"  checkpoint saved → {path}")
+
+    # save best loss separately
+    if is_best:
+        path = os.path.join(CHECKPOINT_DIR, 'best.pt')
+        torch.save(checkpoint, path)
+        print(f"  best model saved → {path}")
+
+
+def load_checkpoint(model, optimizer, path):
+    print(f"loading checkpoint from {path}")
+    checkpoint = torch.load(path, map_location='mps')
+    model.load_state_dict(checkpoint['model_state_dict'])
+    optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+    step  = checkpoint['step']
+    loss  = checkpoint['loss']
+    print(f"  resumed from step {step}, loss {loss:.4f}")
+    return step, loss
+
+
+# ─────────────────────────────────────────
+# TRAINING SETUP
+# ─────────────────────────────────────────
+
 torch.manual_seed(1337)
 torch.mps.manual_seed(1337)
 
-train_loader = DataLoaderLite(B=4,T=256)
+device = 'mps'
 
-torch.set_float32_matmul_precision('high')
+B = 4
+T = 256
+total_batch_size = 4096
+grad_accum_steps = total_batch_size // (B * T)
+
+max_lr       = 3e-4
+min_lr       = max_lr * 0.1
+warmup_steps = 50
+max_steps    = 10000         # ~8M tokens seen across all three datasets
+
+CHECKPOINT_EVERY = 100      # save every 100 steps
+RESUME_FROM      = None     # set to 'checkpoints/latest.pt' to resume
+
+train_loader = StreamingDataLoader(B=B, T=T)
+
+def get_lr(it):
+    if it < warmup_steps:
+        return max_lr * (it + 1) / warmup_steps
+    if it > max_steps:
+        return min_lr
+    decay_ratio = (it - warmup_steps) / (max_steps - warmup_steps)
+    coeff = 0.5 * (1.0 + math.cos(math.pi * decay_ratio))
+    return min_lr + coeff * (max_lr - min_lr)
+
 
 model = GPT(GPTConfig())
-model.to('mps')
-# model = torch.compile(model)
+model.to(device)
+
+optimizer = model.configure_optimizers(
+    weight_decay=0.1,
+    learnr=max_lr,
+    device=device
+)
+
+# ── resume from checkpoint if available ──
+start_step = 0
+best_loss  = float('inf')
+
+if RESUME_FROM and os.path.exists(RESUME_FROM):
+    start_step, _ = load_checkpoint(model, optimizer, RESUME_FROM)
+elif os.path.exists('checkpoints1/latest.pt'):
+    answer = input("found existing checkpoint. resume? (y/n): ")
+    if answer.lower() == 'y':
+        start_step, _ = load_checkpoint(model, optimizer, 'checkpoints1/latest.pt')
 
 
-optimizer = torch.optim.AdamW(model.parameters() , lr = 3e-4)
+# ─────────────────────────────────────────
+# TRAINING LOOP
+# ─────────────────────────────────────────
 
-for i in range(50):
+print(f"\nstarting training from step {start_step}")
+print(f"mix: 50% textbooks | 30% stories | 20% math")
+print(f"grad_accum_steps: {grad_accum_steps}")
+print(f"effective batch size: {total_batch_size} tokens\n")
+
+for step in range(start_step, max_steps):
     t0 = time.time()
-    x,y = train_loader.next_batch()
-    x,y = x.to('mps'),y.to('mps')
+
     optimizer.zero_grad()
-    with torch.autocast(device_type="mps", dtype=torch.bfloat16):
-        logits,loss = model(x,y)
-    loss.backward()
+    loss_accum = 0.0
+
+    for micro_step in range(grad_accum_steps):
+        x, y = train_loader.next_batch()
+        x, y = x.to(device), y.to(device)
+        with torch.autocast(device_type="mps", dtype=torch.bfloat16):
+            logits, loss = model(x, y)
+        loss = loss / grad_accum_steps
+        loss_accum += loss.detach()
+        loss.backward()
+
+    norm = torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+
+    lr = get_lr(step)
+    for param_group in optimizer.param_groups:
+        param_group['lr'] = lr
+
     optimizer.step()
     torch.mps.synchronize()
-    t1 = time.time()
-    dt = (t1-t0)*1000
-    token_persec = (train_loader.B * train_loader.T)/(t1-t0)
-    print(f"step {i} , loss : {loss.item()} , dt {dt: 2f} time , tokens per sec {token_persec} ")
 
-import sys; sys.exit(0)
+    t1 = time.time()
+    dt = (t1 - t0) * 1000
+    tokens_per_sec = (B * T * grad_accum_steps) / (t1 - t0)
+    current_loss = loss_accum.item()
+
+    print(f"step {step:5d} | loss: {current_loss:.4f} | "
+          f"norm: {norm:.4f} | lr: {lr:.2e} | "
+          f"dt: {dt:.0f}ms | tok/s: {tokens_per_sec:.0f} | "
+          f"tokens seen: {train_loader.total_tokens_seen:,}")
+
+    # ── checkpointing ──
+    is_best = current_loss < best_loss
+    if is_best:
+        best_loss = current_loss
+
+    if step % CHECKPOINT_EVERY == 0 or is_best:
+        save_checkpoint(model, optimizer, step, current_loss, is_best)
+
+# ── final save ──
+save_checkpoint(model, optimizer, max_steps, current_loss)
+torch.save(model.state_dict(), 'phi_math_pretrained.pt')
+print(f"\ntraining complete. final model saved to phi_math_pretrained.pt")
+print(f"total tokens seen: {train_loader.total_tokens_seen:,}")
+print(f"best loss achieved: {best_loss:.4f}")
+# import sys; sys.exit(0)
+
+
+
 
 
 
